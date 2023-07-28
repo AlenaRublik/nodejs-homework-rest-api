@@ -1,4 +1,4 @@
-import HttpError from "../helpers/HttpError.js";
+import {HttpError} from "../helpers/index.js";
 
 const validateBody = (validationSchema) => {
   const validate = async (req, res, next) => {
