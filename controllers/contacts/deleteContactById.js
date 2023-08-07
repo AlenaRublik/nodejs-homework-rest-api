@@ -1,5 +1,5 @@
 import { Contact } from "../../models/index.js";
-import {HttpError} from "../../helpers/index.js";
+import { HttpError } from "../../helpers/index.js";
 
 const deleteContactById = async (req, res) => {
   const { contactId } = req.params;
