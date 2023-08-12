@@ -4,7 +4,7 @@ import addContact from "./addContact.js";
 import deleteContactById from "./deleteContactById.js";
 import updateContactById from "./updateContactById.js";
 import updateStatusContact from "./updateStatusContact.js";
-import {ctrlWrapper} from "../../helpers/index.js";
+import { ctrlWrapper } from "../../decorators//index.js";
 
 export default {
   getAllContacts: ctrlWrapper(getAllContacts),
