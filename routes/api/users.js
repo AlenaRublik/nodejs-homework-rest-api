@@ -4,6 +4,8 @@ import {
   validateBody,
   isEmptyBody,
   authenticate,
+  uploadAvatar,
+  modifyAvatar,
 } from "../../middlewares/index.js";
 
 import {
@@ -37,6 +39,14 @@ usersRouter.patch(
   isEmptyBody,
   validateBody(updateSubscriptionSchema),
   ctrl.updateSubscription
+);
+
+usersRouter.patch(
+  "/avatars",
+  authenticate,
+  uploadAvatar.single("avatar"),
+  modifyAvatar,
+  ctrl.updateAvatar
 );
 
 export default usersRouter;
