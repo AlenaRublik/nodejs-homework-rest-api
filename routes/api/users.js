@@ -10,6 +10,7 @@ import {
 
 import {
   updateSubscriptionSchema,
+  userEmailSchema,
   userAuthSchema,
 } from "../../schemas/index.js";
 
@@ -20,6 +21,15 @@ usersRouter.post(
   isEmptyBody,
   validateBody(userAuthSchema),
   ctrl.register
+);
+
+usersRouter.get("/verify/:verificationToken", ctrl.verifyEmail);
+
+usersRouter.post(
+  "/verify/",
+  isEmptyBody,
+  validateBody(userEmailSchema),
+  ctrl.resendVerifyEmail
 );
 
 usersRouter.post(
